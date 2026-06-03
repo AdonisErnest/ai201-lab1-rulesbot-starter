@@ -69,4 +69,19 @@ def retrieve(query, n_results=N_RESULTS):
         return []
 
     # Your implementation here.
-    return []
+    raw = _collection.query(
+        query_texts=[query],
+        n_results=n_results,
+        include=["documents", "metadatas", "distances"],
+    )
+    results = []
+    for text, metadata, distance in zip(
+        raw["documents"][0], raw["metadatas"][0], raw["distances"][0]
+    ):
+        results.append({
+            "text": text,
+            "game": metadata["game"],
+            "distance": distance,
+        })
+    return results
+

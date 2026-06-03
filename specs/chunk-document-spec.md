@@ -111,16 +111,19 @@ handle these cases better, at the cost of more implementation complexity.
 
 ## Implementation Notes
 
-*Fill this in after running the app and confirming ingestion worked.*
+Ingesting rule documents...
+Loaded 8 rule document(s): ['Catan', 'Clue', 'Codenames', 'Monopoly', 'Pandemic', 'Risk', 'Ticket To Ride', 'Uno']
+Stored 149 total chunks in the vector database.
+Ingestion complete. 149 chunks stored.
 
 **Actual chunk count produced across all 8 rule books:**
 
 ```
-[your answer here]
+149
 ```
 
 **One thing that surprised you or didn't match your expectations:**
 
 ```
-[your answer here]
+I was surprised by how adding overlap provides "enough" context to where chunks are easier for the LLM to categorize.
 ```
